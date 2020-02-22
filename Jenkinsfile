@@ -13,6 +13,9 @@ try {
 
   // Run terraform init
   stage('init') {
+    environment {
+      PATH = "/usr/local/bin:$PATH"
+    }
     node {
       withCredentials([[
         $class: 'AmazonWebServicesCredentialsBinding',
