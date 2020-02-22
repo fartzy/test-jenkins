@@ -17,4 +17,10 @@ variable "ami" {
 
   # Bitnami NGINX AMI
   default = "ami-021acbdb89706aa89"
+  
+  # Airflow 
+  # default = "ami-0b59bfac6be064b78"
+  
+  # Apache AMI for ubuntu
+    default = "ami-4aee0927"
 }
