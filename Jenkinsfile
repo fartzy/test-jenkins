@@ -8,6 +8,10 @@ try {
       checkout scm
     }
   }
+  
+  ansiColor('xterm') {
+    sh 'export PATH=${PATH}:usr/local/bin'
+  }
 
   // Run terraform init
   stage('init') {
