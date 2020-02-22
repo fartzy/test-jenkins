@@ -9,9 +9,7 @@ try {
     }
   }
   
-  ansiColor('xterm') {
-    sh 'export PATH=${PATH}:usr/local/bin'
-  }
+
 
   // Run terraform init
   stage('init') {
@@ -21,8 +19,9 @@ try {
         credentialsId: credentialsId,
         accessKeyVariable: 'AWS_ACCESS_KEY_ID',
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-      ]]) {
+      ]]){
         ansiColor('xterm') {
+          sh 'export PATH=${PATH}:usr/local/bin'
           sh 'terraform init'
         }
       }
