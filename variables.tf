@@ -21,6 +21,6 @@ variable "ami" {
   # Airflow 
   # default = "ami-0b59bfac6be064b78"
   
-  # Apache AMI for ubuntu
-    default = "ami-4aee0927"
+  # AMI for ubuntu
+    default = "ami-0fc20dd1da406780b"
 }
