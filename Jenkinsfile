@@ -13,9 +13,6 @@ try {
 
   // Run terraform init
   stage('init') {
-    environment {
-      PATH = "/usr/local/bin:$PATH"
-    }
     node {
       withCredentials([[
         $class: 'AmazonWebServicesCredentialsBinding',
@@ -39,7 +36,8 @@ try {
         accessKeyVariable: 'AWS_ACCESS_KEY_ID',
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
-        ansiColor('xterm') {
+        withEnv(['PATH+BINHOME=/usr/local/bin']) {
+          echo "PATH is: $PATH"
           sh 'terraform plan'
         }
       }
