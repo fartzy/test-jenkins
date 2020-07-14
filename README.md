@@ -1,2 +1,2 @@
 # test-jenkins
-Just a repo to test initial jenkins deployment functionality 
+Just a repo to test initial jenkins terraform deployment functionality 
